@@ -1,0 +1,3 @@
+canonknipser_sug_controller:
+    path: /demo/{name}
+    defaults: { _controller: canonknipser.sug.controller:handle }

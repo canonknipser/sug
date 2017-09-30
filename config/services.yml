@@ -1,0 +1,27 @@
+imports:
+    - { resource: parameters.yml }
+
+services:
+    canonknipser.sug.controller:
+        class: canonknipser\sug\controller\main
+        arguments:
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@user'
+
+    canonknipser.sug.service:
+        class: canonknipser\sug\service
+        arguments:
+            - '@user'
+            - '%canonknipser.sug.tables.demo_table%'
+
+    canonknipser.sug.listener:
+        class: canonknipser\sug\event\main_listener
+        arguments:
+            - '@controller.helper'
+            - '@template'
+            - '@user'
+            - '%core.php_ext%'
+        tags:
+            - { name: event.listener }

@@ -1,0 +1,29 @@
+{
+    "name": "canonknipser/sug",
+    "type": "phpbb-extension",
+    "description": "simple user gallery for phpBB, using builtin attachment functions",
+    "homepage": "http://canonknipser.com",
+    "version": "1.0.0-dev",
+    "time": "2017-09-18",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "canonknipser",
+            "email": "github@canonknipser.com",
+            "homepage": "http://canonknipser.com",
+            "role": "Lead developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "extra": {
+        "display-name": "Simple user gallery",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.1.4,<3.3.0@dev"
+        }
+    },
+    "require-dev": {
+        "phing/phing": "2.4.*"
+    }
+}

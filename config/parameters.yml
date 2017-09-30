@@ -1,0 +1,2 @@
+parameters:
+    canonknipser.sug.tables.demo_table: '%core.table_prefix%demo_table'
