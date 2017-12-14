@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Simple user gallery. An extension for the phpBB Forum Software package.
+ * Simple User Gallery. An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2017, canonknipser, http://canonknipser.com
  * @license GNU General Public License, version 2 (GPL-2.0)

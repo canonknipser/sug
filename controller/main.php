@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Simple user gallery. An extension for the phpBB Forum Software package.
+ * Simple User Gallery. An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2017, canonknipser, http://canonknipser.com
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -11,7 +11,7 @@
 namespace canonknipser\sug\controller;
 
 /**
- * Simple user gallery main controller.
+ * Simple User Gallery main controller.
  */
 class main
 {
@@ -52,7 +52,7 @@ class main
 	 */
 	public function handle($name)
 	{
-		$l_message = !$this->config['acme_demo_goodbye'] ? 'DEMO_HELLO' : 'DEMO_GOODBYE';
+		$l_message = !$this->config['ck_sug_config1'] ? 'DEMO_HELLO' : 'DEMO_GOODBYE';
 		$this->template->assign_var('DEMO_MESSAGE', $this->user->lang($l_message, $name));
 
 		return $this->helper->render('demo_body.html', $name);

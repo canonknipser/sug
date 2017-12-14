@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Simple user gallery. An extension for the phpBB Forum Software package.
+ * Simple User Gallery. An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2017, canonknipser, http://canonknipser.com
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -11,7 +11,7 @@
 namespace canonknipser\sug\ucp;
 
 /**
- * Simple user gallery UCP module.
+ * Simple User Gallery UCP module.
  */
 class main_module
 {
@@ -23,7 +23,7 @@ class main_module
 
 		$this->tpl_name = 'ucp_demo_body';
 		$this->page_title = $user->lang('UCP_DEMO_TITLE');
-		add_form_key('acme/demo');
+		add_form_key('canonknipser/sug');
 
 		$data = array(
 			'user_acme' => $request->variable('user_acme', $user->data['user_acme']),
@@ -31,7 +31,7 @@ class main_module
 
 		if ($request->is_set_post('submit'))
 		{
-			if (!check_form_key('acme/demo'))
+			if (!check_form_key('canonknipser/sug'))
 			{
 				trigger_error($user->lang('FORM_INVALID'));
 			}

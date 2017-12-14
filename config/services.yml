@@ -25,3 +25,21 @@ services:
             - '%core.php_ext%'
         tags:
             - { name: event.listener }
+
+    canonknipser.sug.cron.task.demo:
+        class: canonknipser\sug\cron\task\demo
+        arguments:
+            - '@config'
+        calls:
+            - [set_name, [cron.task.demo]]
+        tags:
+            - { name: cron.task }
+
+    canonknipser.sug.notification.type.demo:
+        class: canonknipser\sug\notification\type\demo
+        shared: false # service MUST not be shared for this to work!
+        parent: notification.type.base
+        calls:
+            - [set_controller_helper, ['@controller.helper']]
+        tags:
+            - { name: notification.type }

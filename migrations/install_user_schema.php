@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Simple user gallery. An extension for the phpBB Forum Software package.
+ * Simple User Gallery. An extension for the phpBB Forum Software package.
  *
  * @copyright (c) 2017, canonknipser, http://canonknipser.com
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -14,7 +14,7 @@ class install_user_schema extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return $this->db_tools->sql_column_exists($this->table_prefix . 'forums', 'ck_sg_show');
+		return $this->db_tools->sql_column_exists($this->table_prefix . 'users', 'user_acme');
 	}
 
 	static public function depends_on()
@@ -26,20 +26,17 @@ class install_user_schema extends \phpbb\db\migration\migration
 	{
 		return array(
 			'add_tables'		=> array(
-				$this->table_prefix . 'ck_sg_attach'	=> array(
+				$this->table_prefix . 'acme_demo'	=> array(
 					'COLUMNS'		=> array(
-						'ck_sg_attach_id'			=> array('UINT', null, 'auto_increment'),
-						'ck_sg_attach_name'			=> array('VCHAR:255', ''),
+						'acme_id'			=> array('UINT', null, 'auto_increment'),
+						'acme_name'			=> array('VCHAR:255', ''),
 					),
-					'PRIMARY_KEY'	=> 'ck_sg_attach_id',
+					'PRIMARY_KEY'	=> 'acme_id',
 				),
 			),
 			'add_columns'	=> array(
-				$this->table_prefix . 'forums'			=> array(
-					'ck_sg_show'				=> array('UINT', 0),
-				),
 				$this->table_prefix . 'users'			=> array(
-					'ck_sg_show'				=> array('UINT', 0),
+					'user_acme'				=> array('UINT', 0),
 				),
 			),
 		);
@@ -49,15 +46,12 @@ class install_user_schema extends \phpbb\db\migration\migration
 	{
 		return array(
 			'drop_columns'	=> array(
-				$this->table_prefix . 'forums'			=> array(
-					'ck_sg_show',
-				),
 				$this->table_prefix . 'users'			=> array(
-					'ck_sg_show',
+					'user_acme',
 				),
 			),
 			'drop_tables'		=> array(
-				$this->table_prefix . 'ck_sg_attach',
+				$this->table_prefix . 'acme_demo',
 			),
 		);
 	}

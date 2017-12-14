@@ -1,0 +1,26 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_SETTINGS}</h1>
+
+<form id="acp_board" method="post" action="{U_ACTION}">
+
+	<fieldset>
+		<dl>
+			<dt>{L_ACP_CK_SUG_DESCRIPTION}</dt>
+			<dd>{L_ACP_CK_SUG_DESCRIPTION_TEXT}</dd>
+		</dl>
+		<dl>
+			<dt><label for="ck_sug_enabled">{L_ACP_CK_SUG_ENABLED}</label></dt>
+			<dd><input type="radio" class="radio" name="ck_sug_enabled" value="1" <!-- IF CK_SUG_ENABLED -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
+				<input type="radio" class="radio" name="ck_sug_enabled" value="0" <!-- IF not CK_SUG_ENABLED -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		</p>
+
+		{S_FORM_TOKEN}
+	</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->

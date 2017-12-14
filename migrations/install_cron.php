@@ -10,11 +10,11 @@
 
 namespace canonknipser\sug\migrations;
 
-class install_acp_module extends \phpbb\db\migration\migration
+class install_cron extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return isset($this->config['ck_sug_config1']);
+		return isset($this->config['ck_sug_cron_last_run']);
 	}
 
 	static public function depends_on()
@@ -25,21 +25,7 @@ class install_acp_module extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return array(
-			array('config.add', array('ck_sug_config1', 0)),
-
-			array('module.add', array(
-				'acp',
-				'ACP_CAT_DOT_MODS',
-				'ACP_SUG_TITLE'
-			)),
-			array('module.add', array(
-				'acp',
-				'ACP_SUG_TITLE',
-				array(
-					'module_basename'	=> '\canonknipser\sug\acp\main_module',
-					'modes'				=> array('settings'),
-				),
-			)),
+			array('config.add', array('ck_sug_cron_last_run', 0)),
 		);
 	}
 }
